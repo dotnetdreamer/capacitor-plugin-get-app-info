@@ -1,6 +1,7 @@
 # Get App Info Cordova Plugin
 
-A Capacitor plugin to get the icon and label of an app based on its package name. Same as [https://github.com/esartor/cordova-plugin-get-app-info](https://github.com/esartor/cordova-plugin-get-app-info) but made for Capacitor.
+A Capacitor plugin to get the icon and label of an app based on its package name. Same as [https://github.com/esartor/cordova-plugin-get-app-info](https://github.com/esartor/cordova-plugin-get-app-info) but made for Capacitor. <br/>
+Wanna be practical? check it out in usage [here](https://github.com/dotnetdreamer/notifier).
 
 
 ## Install
