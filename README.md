@@ -21,10 +21,13 @@ Register this plugin using add(capacitor.plugin.get.app.info.GetAppInfo.class) i
 
 ## Usage
 
+```
 import { Plugins } from '@capacitor/core';
 const { GetAppInfo } = Plugins;
 //import typing
 import { GetAppInfoPlugin } from 'capacitor-plugin-get-app-info';
+
+```
 
 and now get the icon(Base64 string) or app name
 
