@@ -11,6 +11,7 @@ import android.graphics.Bitmap;
 import android.util.Base64;
 import android.util.Log;
 import android.graphics.Canvas;
+import android.content.Intent;
 
 import com.getcapacitor.JSObject;
 import com.getcapacitor.NativePlugin;
@@ -87,6 +88,20 @@ public class GetAppInfo extends Plugin {
       call.success(ret);
     } catch (final NameNotFoundException e) {
       call.reject("Cannot get app label");
+    }
+  }
+
+  @PluginMethod
+  public void launchApp(PluginCall call) {
+    final PackageManager packageManager = getActivity().getPackageManager();
+    String packageName = call.getString("packageName");
+    
+    Intent launchIntent = packageManager.getLaunchIntentForPackage(packageName);
+    if(launchIntent != null) {
+      getContext().startActivity(launchIntent);
+      call.success();
+    } else {
+      call.reject("Cannot open the app");
     }
   }
 

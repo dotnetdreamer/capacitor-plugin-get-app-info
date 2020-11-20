@@ -17,10 +17,9 @@ export class GetAppInfoWeb extends WebPlugin implements GetAppInfoPlugin {
     throw new Error(`Method not implemented. ${options}`);
   }
 
-  // async echo(options: { value: string }): Promise<{ value: string }> {
-  //   console.log('ECHO', options);
-  //   return options;
-  // }
+  launchApp(options: { packageName: string; }): Promise<void> {
+    throw new Error(`Method not implemented. ${options}`);
+  }
 }
 
 const GetAppInfo = new GetAppInfoWeb();

@@ -7,4 +7,5 @@ declare module '@capacitor/core' {
 export interface GetAppInfoPlugin {
   getAppIcon(options: { packageName: string }): Promise<{ value: string }>;
   getAppLabel(options: { packageName: string }): Promise<{ value: string }>;
+  launchApp(options: { packageName: string }): Promise<void>;
 }
