@@ -38,7 +38,6 @@ try {
         packageName: e.package
     });
     if(imgRslt.value) {
-        // e.image = `url('${imgRslt.value}')`;
         e.image = imgRslt.value;
     }
 } catch(e) {
@@ -51,7 +50,6 @@ try {
         packageName: e.package
     });
     if(appName.value) {
-        // e.image = `url('${imgRslt.value}')`;
         e.appName = appName.value;
     }
 } catch(e) {
