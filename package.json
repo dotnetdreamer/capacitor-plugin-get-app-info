@@ -1,6 +1,6 @@
 {
   "name": "capacitor-plugin-get-app-info",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A Capacitor plugin to get the icon and label of an app based on its package name",
   "main": "dist/plugin.js",
   "module": "dist/esm/index.js",

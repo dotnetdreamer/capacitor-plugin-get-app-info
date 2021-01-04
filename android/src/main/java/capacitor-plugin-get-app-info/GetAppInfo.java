@@ -105,6 +105,20 @@ public class GetAppInfo extends Plugin {
     }
   }
 
+  
+  @PluginMethod
+  public void canLaunchApp(PluginCall call) {
+    final PackageManager packageManager = getActivity().getPackageManager();
+    String packageName = call.getString("packageName");
+    
+    Intent launchIntent = packageManager.getLaunchIntentForPackage(packageName);
+    if(launchIntent != null) {
+      call.success();
+    } else {
+      call.reject("Cannot open the app");
+    }
+  }
+
   static private Bitmap getBitmapFromDrawable( Drawable drawable) {
     final Bitmap bmp = Bitmap.createBitmap(drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight(), Bitmap.Config.ARGB_8888);
     final Canvas canvas = new Canvas(bmp);
