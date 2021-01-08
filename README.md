@@ -56,6 +56,24 @@ try {
 } catch(e) {
     //ignore...
 }
+
+    //launch app
+    try {
+        await (<GetAppInfoPlugin>GetAppInfo).launchApp({
+            packageName: 'com.packagename.tolaunch'
+        });
+    } catch(e) {
+        //handle error
+    }
+
+    let canLaunchApp = true;
+    try {
+        await (<GetAppInfoPlugin>GetAppInfo).canLaunchApp({
+            packageName: 'com.packagename.tolaunch'
+        });
+    } catch(e) {
+        canLaunchApp = false;
+    }
 ```
 
 ## Supported platforms
