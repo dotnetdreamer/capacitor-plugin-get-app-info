@@ -9,4 +9,5 @@ export interface GetAppInfoPlugin {
   getAppLabel(options: { packageName: string }): Promise<{ value: string }>;
   launchApp(options: { packageName: string }): Promise<void>;
   canLaunchApp(options: { packageName: string }): Promise<void>;
+  getAvailableApps(): Promise<{ applications: string }>;
 }

@@ -74,6 +74,14 @@ try {
     } catch(e) {
         canLaunchApp = false;
     }
+
+    //get all available apps
+    try {
+      const result = await (<GetAppInfoPlugin>GetAppInfo).getAvailableApps();
+      const apps = <any[]>JSON.parse(result.applications);
+    } catch(e) {
+      this.helperSvc.presentToastGenericError();
+    }
 ```
 
 ## Supported platforms

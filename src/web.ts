@@ -9,6 +9,10 @@ export class GetAppInfoWeb extends WebPlugin implements GetAppInfoPlugin {
     });
   }
 
+  getAvailableApps(): Promise<{ applications: string; }> {
+    throw new Error('Method not implemented.');
+  }
+
   getAppIcon(options: { packageName: string; }): Promise<{ value: string; }> {
     throw new Error(`Method not implemented. ${options}`);
   }
