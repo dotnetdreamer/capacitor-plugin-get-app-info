@@ -1,4 +1,5 @@
 import { WebPlugin } from '@capacitor/core';
+
 import { GetAppInfoPlugin } from './definitions';
 
 export class GetAppInfoWeb extends WebPlugin implements GetAppInfoPlugin {
@@ -29,10 +30,3 @@ export class GetAppInfoWeb extends WebPlugin implements GetAppInfoPlugin {
     throw new Error(`Method not implemented. ${options}`);
   }
 }
-
-const GetAppInfo = new GetAppInfoWeb();
-
-export { GetAppInfo };
-
-import { registerWebPlugin } from '@capacitor/core';
-registerWebPlugin(GetAppInfo);

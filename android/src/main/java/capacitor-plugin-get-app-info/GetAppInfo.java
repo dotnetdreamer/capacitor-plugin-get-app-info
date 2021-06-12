@@ -21,8 +21,9 @@ import com.getcapacitor.NativePlugin;
 import com.getcapacitor.Plugin;
 import com.getcapacitor.PluginCall;
 import com.getcapacitor.PluginMethod;
+import com.getcapacitor.annotation.CapacitorPlugin;
 
-@NativePlugin
+@CapacitorPlugin
 public class GetAppInfo extends Plugin {
 
   private static final String TAG = "GetAppInfoPlugin";
@@ -43,7 +44,7 @@ public class GetAppInfo extends Plugin {
 
         JSObject ret = new JSObject();
         ret.put("value", "data:image/png;base64," + iconBase64);
-      call.success(ret);
+      call.resolve(ret);
     } catch (final NameNotFoundException e) {
       //Log.d(TAG, e.getMessage());
       call.reject("Cannot get app icon");
@@ -62,7 +63,7 @@ public class GetAppInfo extends Plugin {
       
         JSObject ret = new JSObject();
         ret.put("value", appLabel);
-      call.success(ret);
+      call.resolve(ret);
     } catch (final NameNotFoundException e) {
       call.reject("Cannot get app label");
     }
@@ -76,7 +77,7 @@ public class GetAppInfo extends Plugin {
     Intent launchIntent = packageManager.getLaunchIntentForPackage(packageName);
     if(launchIntent != null) {
       getContext().startActivity(launchIntent);
-      call.success();
+      call.resolve();
     } else {
       call.reject("Cannot open the app");
     }
@@ -90,7 +91,7 @@ public class GetAppInfo extends Plugin {
     
     Intent launchIntent = packageManager.getLaunchIntentForPackage(packageName);
     if(launchIntent != null) {
-      call.success();
+      call.resolve();
     } else {
       call.reject("Cannot open the app");
     }
@@ -130,7 +131,7 @@ public class GetAppInfo extends Plugin {
 
       JSObject r = new JSObject();
       r.put("applications", apps);
-      call.success(r);
+      call.resolve(r);
     } catch (final NameNotFoundException e) {
       //Log.d(TAG, e.getMessage());
       call.reject("Cannot get app icon");
