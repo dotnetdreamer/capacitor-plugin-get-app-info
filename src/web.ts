@@ -22,6 +22,10 @@ export class GetAppInfoWeb extends WebPlugin implements GetAppInfoPlugin {
     throw new Error(`Method not implemented. ${options}`);
   }
 
+  getFeature(options: { feature: string; }): Promise<{ value: string; }> {
+    throw new Error(`Method not implemented. ${options}`);
+  };
+
   launchApp(options: { packageName: string; }): Promise<void> {
     throw new Error(`Method not implemented. ${options}`);
   }
