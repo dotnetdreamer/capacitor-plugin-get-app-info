@@ -83,6 +83,19 @@ public class GetAppInfo extends Plugin {
     }
   }
 
+  @PluginMethod
+  public void getFeature(PluginCall call) {
+    final PackageManager packageManager = getActivity().getPackageManager();
+    JSObject ret = new JSObject();
+    String feature = call.getString("feature");
+    if (packageManager.hasSystemFeature(feature)) {
+      ret.put("value", "true");
+      call.resolve(ret);
+    } else {
+      ret.put("value", "false");
+      call.resolve(ret);
+    }
+  }
   
   @PluginMethod
   public void canLaunchApp(PluginCall call) {
