@@ -82,6 +82,15 @@ try {
     } catch(e) {
       this.helperSvc.presentToastGenericError();
     }
+
+    // use hasSystemFeature to get the status
+    try {
+      const istv = await GetAppInfo.getFeature({feature: "android.software.leanback"});
+      console.log('isTV, leanback enable: ', istv);
+    } catch(e) {
+      console.log(e);
+    }
+
 ```
 
 ## Supported platforms
